@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Home</title>
+</head>
+
+<nav class="navbar navbar-dark bg-dark navbar-fixed-top">
+    <a class="navbar-brand" href="#">Students performance Predictor</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/about">About</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<body>
+    
+    <div class="container-fluid">
+        <div class="col-lg-12">
+                <form action="{{ url_for('result') }}" method="post">
+                    <br>
+                    <br>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="gender">gender</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input type="text" class="form-control" id="gender" name="gender" placeholder="0:male , 1:female">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="age">Age</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input type="text" class="form-control" id="age" name="age" placeholder="numeric: from 15 to 22">
+                                    
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="higher">wants to take higher education</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input type="text" class="form-control" id="higher" name="higher" placeholder="1 for Yes, 0 for No">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="Fedu">education of father</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input type="text" class="form-control" id="Fedu" name="Fedu" placeholder="0 - none, 1 - primary education (4th grade), 2 - 5th to 9th grade, 3 - secondary education or 4 - higher education">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="Medu">education of mother</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input type="text" class="form-control" id="Medu" name="Medu" placeholder="0 - none, 1 - primary education (4th grade), 2 - 5th to 9th grade, 3 - secondary education or 4 -higher education">
+                                    
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="Fjob">occupation of father </label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input type="text" class="form-control" id="Fjob" name="Fjob" placeholder="0:'teacher', 1:'health' care related, 2:civil 'services'(e.g.administrative or police), 3:'at_home'or 'other'">
+                                    
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="Mjob">occupation of mother</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input type="text" class="form-control" id="Mjob" name="Mjob" placeholder="0:'teacher', 1:'health' care related, 2:civil 'services'(e.g.administrative or police), 3:'at_home'or 'other'">
+                            </div>
+                        </div>
+                        <br>
+			<br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="absences">number of school absences</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input type="text" class="form-control" id="absences" name="absences" placeholder="numeric: from 0 to 93">
+                            </div>
+                        </div>
+                        <br>
+			<br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="failures">number of past class failure</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input type="text" class="form-control" id="failures" name="failures" placeholder="numeric: from 0">
+                            </div>
+                        </div>
+                        <br>
+			<br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="goout">going out with friends</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input type="text" class="form-control" id="goout" name="goout" placeholder="numeric: from 1 - very low to 5 - very high">
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="health">current health status</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input type="text" class="form-control" id="health" name="health" placeholder="numeric: from 1 - very bad to 5 - very good">
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="traveltime">home to school travel time</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input type="text" class="form-control" id="traveltime" name="traveltime" placeholder="numeric: 1: <15 min., 2: 15 to 30 min., 3: 30 min. to 1 hour, or 4: >1 hour">
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="studytime">weekly study time</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input type="text" class="form-control" id="studytime" name="studytime" placeholder="numeric: 1: <2 hours, 2: 2 to 5 hours, 3: 5 to 10 hours, or 4: >10 hours">
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="schoolsup">extra educational support</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input type="text" class="form-control" id="schoolsup" name="schoolsup" placeholder="0:no , 1:yes">
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="internet">internet access at home</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input type="text" class="form-control" id="internet" name="internet" placeholder="0:no , 1:yes">
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <label for="reason">reason to choose this school</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8">
+                                <input type="text" class="form-control" id="reason" name="reason" placeholder="0:close to home , 1:school reputation ,2:course preference ,3:other">
+                            </div>
+                        </div>
+                        <br>
+                        
+
+                        <br>
+                        <br>
+                        <center>
+                            <button type="submit" class="btn btn-dark" value="submit">Submit</button>
+                        </center>
+                </form>
+            </div>
+        </div>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+<style>
+body {
+    background-color: #626269;
+}
+
+.col-lg-4 {
+    color: #ffffff;
+}
+</style>
+
+</html>
