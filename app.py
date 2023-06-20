@@ -17,7 +17,7 @@ def login():
     username = request.form["username"]
     password = request.form["password"]
     
-    if username == "savu p sudheep" and password == "team15":
+    if username == "savu p sudheep" and password == "canva@12345":
         # Redirect to home.html if login is successful
         return render_template("home.html")
     else:
@@ -32,10 +32,9 @@ def result():
     age = int(request.form['age'])
     Medu= int(request.form['Medu'])
     Fedu = int(request.form['Fedu'])
-    Mjob = int(request.form['Mjob'])
-    Fjob = int(request.form['Fjob'])
+    G1=float(request.form['G1'])
+    G2=float(request.form['G2'])
     traveltime = int(request.form['traveltime'])
-    reason = int(request.form['reason'])
     studytime = int(request.form['studytime'])
     failures = int(request.form['failures'])
     schoolsup = int(request.form['schoolsup'])
@@ -43,11 +42,10 @@ def result():
     goout = int(request.form['goout'])
     health = int(request.form['health'])
     absences = int(request.form['absences'])
-    higher = int(request.form['higher'])
     
     
 
-    x=np.array([gender,age,Medu,Fedu,Mjob,Fjob,traveltime,reason,studytime,failures,schoolsup,internet,goout,health,absences,higher]).reshape(1,-1)
+    x=np.array([gender,age,Medu,Fedu,G1,G2,traveltime,studytime,failures,schoolsup,internet,goout,health,absences]).reshape(1,-1)
 
     scaler_path = os.path.join('models\scaler.pkl')
     scaler=None
