@@ -50,14 +50,14 @@ def result():
     scaler_path = os.path.join('models\scaler.pkl')
     scaler=None
     with open(scaler_path,'rb') as scaler_file:
-        scaler=pickle.load(scaler_file)
+        scaler = pickle.load(scaler_file)
 
     x=scaler.transform(x)
 
-    model_path=os.path.join('models\lr.sav')
-    lr=joblib.load(model_path)
+    model_path=os.path.join('models\dt.sav')
+    dt=joblib.load(model_path)
 
-    Y_pred=lr.predict(x)
+    Y_pred=dt.predict(x)
 
     
     if Y_pred==0:
